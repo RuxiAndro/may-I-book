@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { TextField, Button, Container, Typography, Box } from '@mui/material';
 import { useDispatch } from "react-redux";
-import { addResevation } from "./slices/reservationSlice";
+import { addReservation } from "./slices/reservationSlice";
 
 function Client()
 {
@@ -22,7 +22,7 @@ function Client()
         };
         console.log('Dispatching reservation:', reservation);
         //functia de actualizare a starii am inlocuit-o cu actiunea de dispatch
-        dispatch(addResevation(reservation));//trimit actiunea
+        dispatch(addReservation(reservation));//trimit actiunea
         setCheckInDate('');
         setCheckOutDate('');
         setGuests(1);

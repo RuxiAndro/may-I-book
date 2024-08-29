@@ -1,10 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const reservationSlice = createSlice({
+const reservationSlice = createSlice({ // asteapra o lista de obiecte de tip reservation
     name: 'reservations',//numele slice-ului
-    initialState:[],   //starea initiala a slice-ului,o lista goala care ulterior va contine rezervarile
+    /*initialState:{
+        reservations: [], //starea initiala e un obiect cu un array pt rezervari
+    },*/   
+    initialState: [],
     reducers:{
-        addResevation(state,action){ //state=lista rezervarilor,starea curenta a slice-ului
+        addReservation(state, action){ //state=lista rezervarilor,starea curenta a slice-ului
             //action= obiectul care contine informatiile despre actiunea care a fost dispatchata
             state.push(action.payload);//datele trimise pt a actualiza starea
         },
@@ -16,4 +19,6 @@ const reservationSlice = createSlice({
 });
 
 export default reservationSlice.reducer;
-export const {addResevation,setReservation}=reservationSlice.actions;
+export const { addReservation, setReservation } = reservationSlice.actions;
+
+//state va fi un obiect cu cheia 'reservatios', iar aceasta cheie contine array-ul de rezervari
